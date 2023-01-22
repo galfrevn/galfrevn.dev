@@ -1,5 +1,6 @@
 {
   "name": "galfrevn.dev",
+  "description": "This repo is my software development portfolio featuring sample projects and code snippets in various languages and technologies. Includes my resume and contact information for potential employers or collaborators. Explore and let me know if you have any questions or feedback 🧙🏼‍♂️",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,14 +11,29 @@
   },
   "dependencies": {
     "@next/font": "13.1.4",
+    "clsx": "^1.2.1",
+    "framer-motion": "^8.5.0",
+    "gray-matter": "^4.0.3",
+    "mdx-bundler": "^9.2.1",
+    "next": "13.1.4",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "autoprefixer": "^10.4.13",
+    "esbuild": "^0.15.12",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
-    "next": "13.1.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "eslint-config-prettier": "^8.5.0",
+    "postcss": "^8.4.18",
+    "postcss-custom-media": "^8.0.2",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-nested": "^6.0.0",
+    "prettier": "^2.7.1",
     "typescript": "4.9.4"
   }
 }
