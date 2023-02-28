@@ -17,8 +17,9 @@ export const Hero = () => {
       viewport={{ once: true }}
       className='container max-w-7xl relative w-screen h-screen'
     >
+      <Glow />
       <AnimatePresence>
-        <article className='absolute left-8 bottom-24 md:bottom-8 md:max-w-[60%] '>
+        <article className='absolute left-5 md:left-7 bottom-24 md:bottom-8 md:max-w-[60%] '>
           <AnimatedLetters
             as='h1'
             text='I design and develop applications.'
@@ -54,7 +55,7 @@ export const Hero = () => {
             }}
           />
         </article>
-        <article className='absolute bottom-8 left-8 md:right-8 md:left-auto '>
+        <article className='absolute bottom-8 left-5 md:right-8 md:left-auto '>
           <div key='explore-text' className='flex items-center gap-1 cursor-pointer'>
             <AnimatedLetters
               as='p'
@@ -86,3 +87,5 @@ export const Hero = () => {
     </motion.section>
   );
 };
+
+const Glow = () => <div className='bg-glow absolute blur-2xl -right-24 -top-24 w-[400px] h-72 md:w-[800px] md:h-96' />;

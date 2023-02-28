@@ -19,7 +19,7 @@ export const About = () => {
       whileInView='visible'
       exit='hidden'
       viewport={{ once: true }}
-      className='container max-w-7xl my-40 px-8 max-w-2xl'
+      className='container my-40 px-5 md:px-8 max-w-2xl'
     >
       <AnimatePresence>
         <AnimatedLetters
