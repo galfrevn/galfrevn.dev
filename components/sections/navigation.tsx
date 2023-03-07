@@ -23,10 +23,12 @@ const navigationAvatarProps: ImageProps = {
 };
 
 export const Navigation = () => {
+
   const navigationHidden = useMediaQuery(md);
+  
 
   return (
-    <header className='position fixed w-screen max-w-7xl mx-auto top-0 z-10 pb-4 '>
+    <header className='position fixed w-screen max-w-7xl mx-auto top-0 z-10 pb-4 dark:bg-darker/90 backdrop-blur-md  '>
       <nav className='mt-8 flex justify-between px-6 lg:px-8 items-center'>
         <motion.div
           key='avatar'

@@ -7,6 +7,10 @@ module.exports = {
       display: 'var(--display-font)',
     },
     extend: {
+      colors: {
+        darker: '#0F0D0E',
+        accent: '#FCBA28'
+      },
       transitionDelay: {
         3000: '3000ms',
       },

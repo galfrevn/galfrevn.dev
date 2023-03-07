@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatedLetters } from 'components/animated/text';
+import { AnimatedLetters, AnimatedText } from 'components/animated/text';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowDownRight } from 'lucide-react';
 
@@ -17,7 +17,6 @@ export const Hero = () => {
       viewport={{ once: true }}
       className='container max-w-7xl relative w-screen h-screen'
     >
-      <Glow />
       <AnimatePresence>
         <article className='absolute left-5 md:left-7 bottom-24 md:bottom-8 md:max-w-[60%] '>
           <AnimatedLetters
@@ -37,47 +36,23 @@ export const Hero = () => {
               },
             }}
           />
-          <AnimatedLetters
+          <AnimatedText
             as='p'
             className='mt-10 text-lg font-light leading-relaxed text-dark-400 dark:text-dark-200'
             text='Fullstack software engieer with a passion for great design and user experiences.'
-            textVariants={{
-              hidden: { transition: { staggerChildren: 0.005 } },
-              visible: { transition: { staggerChildren: 0.005 } },
-            }}
-            letterVariants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.5 },
-              },
-            }}
           />
         </article>
         <article className='absolute bottom-8 left-5 md:right-8 md:left-auto '>
           <div key='explore-text' className='flex items-center gap-1 cursor-pointer'>
-            <AnimatedLetters
+            <AnimatedText
               as='p'
               className='text-lg font-light leading-relaxed text-dark-400 dark:text-dark-200'
               text='Explore my projects'
-              textVariants={{
-                hidden: { transition: { staggerChildren: 0.015 } },
-                visible: { transition: { staggerChildren: 0.015 } },
-              }}
-              letterVariants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.5 },
-                },
-              }}
             />
             <motion.div
               key='discover-icon'
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 1.5 } }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 1.2 } }}
             >
               <ArrowDownRight className='stroke-1 ' />
             </motion.div>
@@ -87,5 +62,3 @@ export const Hero = () => {
     </motion.section>
   );
 };
-
-const Glow = () => <div className='bg-glow absolute blur-2xl -right-24 -top-24 w-[400px] h-72 md:w-[800px] md:h-96' />;
