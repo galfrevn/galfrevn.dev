@@ -44,7 +44,7 @@ export const Cursor = ({ cursorVariant }: { cursorVariant: CursorVariant }) => {
   );
 };
 
-export const CursorWrapper = ({ children }: { children: React.ReactNode }) => {
+export const CursorProvider = ({ children }: { children: React.ReactNode }) => {
   const [cursorVariant, setCursorVariant] = useState<CursorVariant>('iddle');
 
   return (

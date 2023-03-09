@@ -10,6 +10,7 @@ import { useMediaQuery, md } from 'hooks/use-media-query';
 
 import { ButtonWithAnimatedText } from 'components/animated/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip';
+import { ThemeSwitcher } from 'components/animated/theme/switcher';
 
 const navigationAvatarProps: ImageProps = {
   width: 120,
@@ -29,7 +30,7 @@ export const Navigation = () => {
       <nav className='mt-8 flex justify-between px-6 lg:px-8 items-center'>
         <motion.div
           key='avatar'
-          className='rounded-full p-[2px] ring-[2px] ring-black cursor-pointer lg:p-[3px] '
+          className='rounded-full p-[2px] ring-[2px] ring-black dark:ring-white cursor-pointer lg:p-[3px] '
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 0.7 } }}
           whileHover={{ scale: 1.07 }}
@@ -63,18 +64,21 @@ export const Navigation = () => {
               <ButtonWithAnimatedText />
             </NavigationButton>
           )}
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <NavigationButton delay={5} key='resume'>
-                  <FileText className='w-5 text-neutral-800 stroke-1' />
-                </NavigationButton>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>My resume</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <ThemeSwitcher />
+          {navigationHidden && (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <NavigationButton delay={5} key='resume'>
+                    <FileText className='w-5 stroke-1' />
+                  </NavigationButton>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>My resume</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
         </motion.ul>
       </nav>
     </header>

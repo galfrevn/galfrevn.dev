@@ -1,18 +1,22 @@
 import 'styles/tailwind.css';
 
-import { MainLayout } from 'components/layout/main';
-import { Navigation } from 'components/layout/navigation';
-import { CursorWrapper } from 'components/animated/cursor';
+import { FontProvider } from 'components/context/font';
+import { ThemeProvider } from 'components/context/theme';
+import { CursorProvider } from 'components/context/cursor';
+
+import { Navigation } from 'components/sections/navigation';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body>
-        <MainLayout>
-          <Navigation />
-          <CursorWrapper>{children}</CursorWrapper>
-        </MainLayout>
-      </body>
+      <FontProvider>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <CursorProvider>
+            <Navigation />
+            {children}
+          </CursorProvider>
+        </ThemeProvider>
+      </FontProvider>
     </html>
   );
 }
