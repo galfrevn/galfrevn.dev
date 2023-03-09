@@ -7,3 +7,8 @@ export const configuration = {
     current: '/assets/avatar.png',
   },
 };
+
+export const externalLinks = {
+  resume: 'https://docs.google.com',
+  blog: 'https://blog.galfrevn.com',
+};

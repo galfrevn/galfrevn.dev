@@ -9,14 +9,10 @@ module.exports = {
     extend: {
       colors: {
         darker: '#0F0D0E',
-        accent: '#FCBA28'
+        accent: '#FCBA28',
       },
       transitionDelay: {
         3000: '3000ms',
-      },
-      backgroundImage: {
-        pattern: 'url(/assets/bg.png)',
-        glow: 'radial-gradient(rgba(1,65,255,.4),rgba(1,65,255,0))'
       },
       keyframes: {
         'accordion-down': {

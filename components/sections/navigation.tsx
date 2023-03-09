@@ -1,16 +1,18 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
-import { configuration } from 'config/meta';
+import { configuration, externalLinks } from 'config/meta';
+
 import Image, { ImageProps } from 'next/image';
+import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 import { FileText } from 'lucide-react';
 import { useMediaQuery, md } from 'hooks/use-media-query';
 
 import { ButtonWithAnimatedText } from 'components/animated/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip';
 import { ThemeSwitcher } from 'components/animated/theme/switcher';
+import { NavigationButton } from 'components/sections/navigation-button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip';
 
 const navigationAvatarProps: ImageProps = {
   width: 120,
@@ -23,9 +25,7 @@ const navigationAvatarProps: ImageProps = {
 };
 
 export const Navigation = () => {
-
   const navigationHidden = useMediaQuery(md);
-  
 
   return (
     <header className='position fixed w-screen max-w-7xl mx-auto top-0 z-10 pb-4 dark:bg-darker/90 backdrop-blur-md  '>
@@ -38,9 +38,11 @@ export const Navigation = () => {
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 1.02 }}
         >
-          <div className='rounded-full p-px h-9 w-9 lg:h-14 lg:w-14 select'>
-            <Image {...navigationAvatarProps} className='rounded-full ' draggable={false} />
-          </div>
+          <Link href='/'>
+            <div className='rounded-full p-px h-9 w-9 lg:h-14 lg:w-14 select'>
+              <Image {...navigationAvatarProps} className='rounded-full ' draggable={false} />
+            </div>
+          </Link>
         </motion.div>
 
         <motion.ul
@@ -48,18 +50,20 @@ export const Navigation = () => {
           className='flex items-center font-medium gap-6 md:gap-8'
         >
           <NavigationButton delay={0} key='blog'>
-            Blog
+            <Link href={externalLinks.blog} rel='noreferrer'>
+              <p>Blog</p>
+            </Link>
           </NavigationButton>
           {navigationHidden && (
-            <NavigationButton delay={1} key='snippets'>
-              Snippets
+            <NavigationButton delay={1} key='stack'>
+              <Link href='/stack'>Stack</Link>
             </NavigationButton>
           )}
           <NavigationButton delay={2} key='projects'>
-            Projects
+            <Link href='/projects'>Projects</Link>
           </NavigationButton>
-          <NavigationButton delay={3} key='about'>
-            About
+          <NavigationButton delay={3} key='about' route='about'>
+            <Link href='/about'>About</Link>
           </NavigationButton>
           {navigationHidden && (
             <NavigationButton delay={4} key='cto'>
@@ -74,7 +78,9 @@ export const Navigation = () => {
               <Tooltip>
                 <TooltipTrigger>
                   <NavigationButton delay={6} key='resume'>
-                    <FileText className='w-5 stroke-1' />
+                    <Link href={externalLinks.resume} target='_blank' rel='noreferrer'>
+                      <FileText className='w-5 stroke-1' />
+                    </Link>
                   </NavigationButton>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -86,22 +92,5 @@ export const Navigation = () => {
         </motion.ul>
       </nav>
     </header>
-  );
-};
-
-interface NavigationButtonProps extends PropsWithChildren {
-  delay: number;
-}
-
-const NavigationButton = ({ children, delay, ...navigationButton }: NavigationButtonProps) => {
-  return (
-    <motion.li
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0, transition: { delay: 0.7 + 0.05 * delay } }}
-      className='cursor-pointer select-none text-sm font-light leading-relaxed tracking-wide'
-      {...navigationButton}
-    >
-      {children}
-    </motion.li>
   );
 };
