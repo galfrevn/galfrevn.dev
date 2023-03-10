@@ -2,7 +2,8 @@ import 'styles/tailwind.css';
 
 import { FontProvider } from 'components/context/font';
 import { ThemeProvider } from 'components/context/theme';
-import { CursorProvider } from 'components/context/cursor';
+import { SmoothScrollProvider } from 'components/context/scroll';
+/* import { CursorProvider } from 'components/context/cursor'; */
 
 import { Navigation } from 'components/sections/navigation';
 
@@ -11,10 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en' suppressHydrationWarning>
       <FontProvider>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <CursorProvider>
+          {/* <CursorProvider> */}
             <Navigation />
-            {children}
-          </CursorProvider>
+            <SmoothScrollProvider>{children}</SmoothScrollProvider>
+          {/* </CursorProvider> */}
         </ThemeProvider>
       </FontProvider>
     </html>

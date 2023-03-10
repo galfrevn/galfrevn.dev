@@ -4,7 +4,7 @@ export const ButtonWithAnimatedText = () => {
   return (
     <motion.div 
       key='get-in-touch-button'
-      className='relative w-28 h-10 rounded-full select-none bg-blue-400 dark:bg-opacity-20 dark:backdrop-blur-sm text-sm text-white overflow-hidden cursor-pointer'
+      className='relative w-28 h-10 rounded-full select-none bg-blue-400 dark:bg-blue-600/80 dark:backdrop-blur-lg text-sm text-white overflow-hidden cursor-pointer'
       whileHover={{ width: 130}}
       whileTap={{ scale: 0.92 }}
     >

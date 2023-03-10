@@ -26,7 +26,7 @@ export const Navigation = () => {
   const navigationHidden = useMediaQuery(md);
 
   return (
-    <header className='position fixed w-screen top-0 z-10'>
+    <header className='position fixed w-screen max-w-7xl mx-auto top-0 z-10 pb-4 '>
       <nav className='mt-8 flex justify-between px-6 lg:px-8 items-center'>
         <motion.div
           key='avatar'
@@ -64,12 +64,14 @@ export const Navigation = () => {
               <ButtonWithAnimatedText />
             </NavigationButton>
           )}
-          <ThemeSwitcher />
+          <NavigationButton delay={5} key='theme'>
+            <ThemeSwitcher />
+          </NavigationButton>
           {navigationHidden && (
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <NavigationButton delay={5} key='resume'>
+                  <NavigationButton delay={6} key='resume'>
                     <FileText className='w-5 stroke-1' />
                   </NavigationButton>
                 </TooltipTrigger>

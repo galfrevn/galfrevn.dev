@@ -15,7 +15,7 @@ export const Hero = () => {
       whileInView='visible'
       exit='hidden'
       viewport={{ once: true }}
-      className='container max-w-none relative w-screen h-screen'
+      className='container max-w-7xl relative w-screen h-screen'
     >
       <AnimatePresence>
         <article className='absolute left-8 bottom-24 md:bottom-8 md:max-w-[60%] '>

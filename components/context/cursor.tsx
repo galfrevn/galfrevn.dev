@@ -37,7 +37,7 @@ export const Cursor = ({ cursorVariant }: { cursorVariant: CursorVariant }) => {
 
   return (
     <motion.div
-      className='bg-black h-3 w-3 rounded-full fixed top-[1000px] left-0 pointer-events-none z-20 hidden md:visible'
+      className='bg-black h-3 w-3 rounded-full fixed top-[1000px] left-0 pointer-events-none z-20 hidden md:block'
       variants={variants}
       animate={cursorVariant}
     ></motion.div>

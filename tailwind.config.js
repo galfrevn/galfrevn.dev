@@ -11,7 +11,8 @@ module.exports = {
         3000: '3000ms',
       },
       backgroundImage: {
-        pattern: 'url(/assets/bg.png)'
+        pattern: 'url(/assets/bg.png)',
+        glow: 'radial-gradient(rgba(1,65,255,.4),rgba(1,65,255,0))'
       },
       keyframes: {
         'accordion-down': {
