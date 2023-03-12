@@ -1,11 +1,15 @@
 'use client';
 
+import { PropsWithChildren } from 'react';
+import { configuration } from 'config/meta';
 import Image, { ImageProps } from 'next/image';
 
 import { motion } from 'framer-motion';
-import { configuration } from 'config/meta';
+import { FileText } from 'lucide-react';
+import { useMediaQuery, md } from 'hooks/use-media-query';
 
 import { ButtonWithAnimatedText } from 'components/animated/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'components/ui/tooltip';
 
 const navigationAvatarProps: ImageProps = {
   width: 120,
@@ -18,6 +22,8 @@ const navigationAvatarProps: ImageProps = {
 };
 
 export const Navigation = () => {
+  const navigationHidden = useMediaQuery(md);
+
   return (
     <header className='position fixed w-screen top-0 z-10'>
       <nav className='mt-8 flex justify-between px-6 lg:px-8 items-center'>
@@ -34,15 +40,60 @@ export const Navigation = () => {
           </div>
         </motion.div>
 
-        <ul className='flex gap-8 items-center font-medium'>
-          <motion.li key='blog'>Blog</motion.li>
-          <li>Snippets</li>
-          <li>Projects</li>
-          <li>About</li>
-          <ButtonWithAnimatedText />
-          <li>Resume</li>
-        </ul>
+        <motion.ul
+          key='navigation-buttons'
+          className='flex items-center font-medium gap-6 md:gap-8'
+        >
+          <NavigationButton delay={0} key='blog'>
+            Blog
+          </NavigationButton>
+          {navigationHidden && (
+            <NavigationButton delay={1} key='snippets'>
+              Snippets
+            </NavigationButton>
+          )}
+          <NavigationButton delay={2} key='projects'>
+            Projects
+          </NavigationButton>
+          <NavigationButton delay={3} key='about'>
+            About
+          </NavigationButton>
+          {navigationHidden && (
+            <NavigationButton delay={4} key='cto'>
+              <ButtonWithAnimatedText />
+            </NavigationButton>
+          )}
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <NavigationButton delay={5} key='resume'>
+                  <FileText className='w-5 text-neutral-800 stroke-1' />
+                </NavigationButton>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>My resume</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </motion.ul>
       </nav>
     </header>
+  );
+};
+
+interface NavigationButtonProps extends PropsWithChildren {
+  delay: number;
+}
+
+const NavigationButton = ({ children, delay, ...navigationButton }: NavigationButtonProps) => {
+  return (
+    <motion.li
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0, transition: { delay: 0.7 + 0.05 * delay } }}
+      className='cursor-pointer select-none text-sm font-light leading-relaxed tracking-wide'
+      {...navigationButton}
+    >
+      {children}
+    </motion.li>
   );
 };

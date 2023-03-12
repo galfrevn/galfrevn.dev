@@ -2,6 +2,7 @@
 
 import { AnimatedLetters } from 'components/animated/text';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowDownRight } from 'lucide-react';
 
 export const Hero = () => {
   return (
@@ -14,10 +15,10 @@ export const Hero = () => {
       whileInView='visible'
       exit='hidden'
       viewport={{ once: true }}
-      className='container relative w-screen h-screen'
+      className='container max-w-none relative w-screen h-screen'
     >
       <AnimatePresence>
-        <article className='absolute left-8 bottom-8 lg:max-w-[60%] '>
+        <article className='absolute left-8 bottom-24 md:bottom-8 md:max-w-[60%] '>
           <AnimatedLetters
             as='h1'
             text='I design and develop applications.'
@@ -52,6 +53,34 @@ export const Hero = () => {
               },
             }}
           />
+        </article>
+        <article className='absolute bottom-8 left-8 md:right-8 md:left-auto '>
+          <div key='explore-text' className='flex items-center gap-1 cursor-pointer'>
+            <AnimatedLetters
+              as='p'
+              className='text-lg font-light leading-relaxed text-dark-400 dark:text-dark-200'
+              text='Explore my projects'
+              textVariants={{
+                hidden: { transition: { staggerChildren: 0.015 } },
+                visible: { transition: { staggerChildren: 0.015 } },
+              }}
+              letterVariants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.5 },
+                },
+              }}
+            />
+            <motion.div
+              key='discover-icon'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 1.5 } }}
+            >
+              <ArrowDownRight className='stroke-1 ' />
+            </motion.div>
+          </div>
         </article>
       </AnimatePresence>
     </motion.section>

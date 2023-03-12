@@ -4,6 +4,6 @@ export const configuration = {
 
   avatar: {
     placeholder: '/assets/avatar-blured.png',
-    current: '/assets/avatar.png'
-  }
-}
+    current: '/assets/avatar.png',
+  },
+};
