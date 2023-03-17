@@ -1,7 +1,6 @@
 {
   "name": "galfrevn.dev",
-  "description": "This repo is my software development portfolio featuring sample projects and code snippets in various languages and technologies. Includes my resume and contact information for potential employers or collaborators. Explore and let me know if you have any questions or feedback 🧙🏼‍♂️",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,31 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "13.1.4",
-    "@reach/tooltip": "^0.18.0",
+    "@motionone/utils": "^10.15.1",
+    "@next/font": "^13.2.4",
     "clsx": "^1.2.1",
-    "framer-motion": "^8.5.0",
-    "gray-matter": "^4.0.3",
-    "mdx-bundler": "^9.2.1",
-    "next": "13.1.4",
-    "next-themes": "^0.2.1",
+    "framer-motion": "^10.5.0",
+    "lucide-react": "^0.125.0",
+    "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "autoprefixer": "^10.4.13",
-    "esbuild": "^0.15.12",
-    "eslint": "8.32.0",
-    "eslint-config-next": "13.1.4",
-    "eslint-config-prettier": "^8.5.0",
-    "postcss": "^8.4.18",
-    "postcss-custom-media": "^8.0.2",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-nested": "^6.0.0",
-    "prettier": "^2.7.1",
-    "typescript": "4.9.4"
+    "@types/node": "18.15.3",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "postcss": "^8.4.21",
+    "tailwind-merge": "^1.10.0",
+    "tailwindcss": "^3.2.7",
+    "tailwindcss-animate": "^1.0.5",
+    "typescript": "5.0.2"
   }
 }

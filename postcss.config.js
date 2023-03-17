@@ -1,7 +1,6 @@
 module.exports = {
   plugins: {
-    'postcss-flexbugs-fixes': {},
-    'postcss-nested': {},
+    tailwindcss: {},
     autoprefixer: {},
   },
-};
+}
