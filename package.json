@@ -11,6 +11,7 @@
   "dependencies": {
     "@motionone/utils": "^10.15.1",
     "@next/font": "^13.2.4",
+    "@radix-ui/react-tooltip": "^1.0.5",
     "clsx": "^1.2.1",
     "framer-motion": "^10.5.0",
     "lucide-react": "^0.125.0",
