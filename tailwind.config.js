@@ -10,6 +10,9 @@ module.exports = {
       transitionDelay: {
         3000: '3000ms',
       },
+      backgroundImage: {
+        pattern: 'url(/assets/bg.png)'
+      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
