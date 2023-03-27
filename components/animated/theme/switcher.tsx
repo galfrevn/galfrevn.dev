@@ -24,21 +24,21 @@ export function ThemeSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <motion.button whileHover={{ rotate: 45 }}  >
-          <Sun className='hover:text-grey-900 dark:text-grey-400 dark:hover:text-grey-100 stroke-1' />
+          <Sun className='hover:text-grey-900 dark:text-grey-400 dark:hover:text-grey-100' />
           <span className='sr-only'>Toggle theme</span>
         </motion.button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end' className={`${outfit.variable} font-display `}>
         <DropdownMenuItem onClick={() => setTheme('light')}>
-          <Sun className='mr-2 h-4 w-4 stroke-1' />
+          <Sun className='mr-2 h-4 w-4' />
           <span className='font-normal'>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
-          <Moon className='mr-2 h-4 w-4 stroke-1' />
+          <Moon className='mr-2 h-4 w-4 ' />
           <span className='font-normal'>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
-          <Laptop className='mr-2 h-4 w-4 stroke-1' />
+          <Laptop className='mr-2 h-4 w-4 ' />
           <span className='font-normal'>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

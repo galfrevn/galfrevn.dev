@@ -38,7 +38,7 @@ export const Hero = () => {
           />
           <AnimatedText
             as='p'
-            className='mt-10 text-lg font-light leading-relaxed text-dark-400 dark:text-dark-200'
+            className='mt-10 text-lg font-normal leading-relaxed text-dark-400 dark:text-dark-200'
             text='Fullstack software engieer with a passion for great design and user experiences.'
           />
         </article>
@@ -46,7 +46,7 @@ export const Hero = () => {
           <div key='explore-text' className='flex items-center gap-1 cursor-pointer'>
             <AnimatedText
               as='p'
-              className='text-lg font-light leading-relaxed text-dark-400 dark:text-dark-200'
+              className='text-lg font-normal leading-relaxed text-dark-400 dark:text-dark-200'
               text='Explore my projects'
             />
             <motion.div
@@ -54,7 +54,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 1.2 } }}
             >
-              <ArrowDownRight className='stroke-1 ' />
+              <ArrowDownRight />
             </motion.div>
           </div>
         </article>

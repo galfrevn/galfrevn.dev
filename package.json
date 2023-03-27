@@ -31,6 +31,7 @@
     "eslint-config-next": "13.2.4",
     "postcss": "^8.4.21",
     "tailwind-merge": "^1.10.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss": "^3.2.7",
     "tailwindcss-animate": "^1.0.5",
     "typescript": "5.0.2"

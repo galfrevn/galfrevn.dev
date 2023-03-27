@@ -79,7 +79,7 @@ export const Navigation = () => {
                 <TooltipTrigger>
                   <NavigationButton delay={6} key='resume'>
                     <Link href={externalLinks.resume} target='_blank' rel='noreferrer'>
-                      <FileText className='w-5 stroke-1' />
+                      <FileText className='w-5' />
                     </Link>
                   </NavigationButton>
                 </TooltipTrigger>

@@ -23,7 +23,7 @@ export const NavigationButton = ({ children, delay, route }: NavigationButtonPro
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 1.01 }}
       className={cn(
-        'cursor-pointer select-none text-sm font-light leading-relaxed tracking-wide hover:underline decoration-wavy decoration-accent',
+        'cursor-pointer select-none text-sm font-normal leading-relaxed tracking-wide hover:underline decoration-wavy decoration-accent',
         {
           'underline': isActiveRoute,
         }

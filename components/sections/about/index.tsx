@@ -24,7 +24,7 @@ export const About = () => {
       <AnimatePresence>
         <AnimatedLetters
           as='p'
-          className='text-lg font-light leading-relaxed text-dark-400 dark:text-dark-200'
+          className='text-lg font-normal leading-relaxed text-dark-400 dark:text-dark-200'
           text={aboutText}
           textVariants={{
             hidden: { transition: { staggerChildren: 0.005 } },
