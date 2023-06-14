@@ -3,7 +3,7 @@ import { AboutHero } from 'components/sections/about/hero';
 
 export default function About() {
   return (
-    <section className='container max-w-7xl px-6 mt-40'>
+    <section className='container max-w-7xl my-40 px-6'>
       <AboutHero />
       <AnimatedImage />
       <p className='text-lg font-normal leading-relaxed text-dark-400 dark:text-dark-200 mb-10'>

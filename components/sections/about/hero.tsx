@@ -31,7 +31,7 @@ export const AboutHero = () => {
               transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.5 },
             },
           }}
-          className='text-lg font-normal leading-relaxed text-dark-400 dark:text-dark-200 max-w-2xl '
+          className='text-lg font-normal leading-normal text-dark-400 dark:text-dark-200 max-w-2xl '
           text='Get a brief look at who I am and what I do. If you would like to know more about me and my interests, you can.'
         />
         <div className='flex items-center gap-1 mt-8 lg:mt-0 opacity-75'>
